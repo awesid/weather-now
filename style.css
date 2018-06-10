@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    background-color: rgba(20, 20, 20, 0.9);
+} 
+#header{
+    margin: 0px;
+    width: 100%;
+    background-color: rgb(250, 117, 9);
+    padding: 10px;
+    
+}
+
+#header a{
+    margin: 0px;
+    color: black;
+    text-align: left;
+    font-family: 'Montserrat',serif;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 900;
+
+}
+
+
+
+#header a img{
+    height: 60%;
+    background-color: black;
+}
+
+#search{
+    padding: 0px;
+}
+
+
+#search input{
+    margin-left: 10px;
+    margin-right: 10px; 
+    width: 75%;
+}
+#search button{
+    color: black;
+    border-color: black;
+    background-color: rgb(10,120,220);
+    width: 16.6666%;
+    padding: 5px;
+}
+#search button:hover {
+    color: rgb(250, 117, 9);
+    background-color:black; 
+}
+
+
+
+#mapid {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    
+}
+
+.modal-header , .modal-footer{
+    color:black;
+    background-color:rgb(250, 117, 9); 
+}
+
+#modalContent{
+    background-color: black;
+    color: antiquewhite;
+}
+#modal-close-btn{
+    background-color: rgb(10,120,220);
+}
+
+
+#footer{
+    width: 100%;
+    margin-top: 40px;
+    background-color: rgb(250, 117, 9); 
+}
+#footer h4{
+    padding-top: 10px;
+    font-family:'Montserrat',sans-serif; 
+    font-weight: 600;   
+    text-align: center;
+    color: black;
+}
+#footer ul li a i{
+    color: black;
+    font-size: 1.7em;
+}

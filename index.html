@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WEATHER'NOW</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+            crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" 
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+        
+    <!-- Custom CSS Files        -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <!-- link for font awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!--Links for the map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    
+</head>
+<body>
+    <!--div id="header" class="container-fluid">
+        <div  class="row">
+                
+                <h1 class="col-12 col-sm-12 col-md-7 col-lg-7"><img src="logo.png" alt="Logo">Weather'Now</h1>
+                <input id="inp" class="col-9 col-sm-9 col-md-3 col-lg-3" type="text" placeholder="Search for weather">
+                <button id="butt" class="col-2 col-sm-2 col-md-1 col-lg-1">GO!</button> 
+        </div>
+        <div class="row">
+            
+        </div>
+    </div-->
+    <!-- Image and text -->
+    <nav id="header" class="navbar sticky-top navbar-light">
+        <a class="navbar-brand col-12 col-sm-12 col-md-7 col-lg-7" href="#">
+          <img src="logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+          Weather'Now
+        </a>
+        <form id="search" class="form-inline col-12 col-sm-12 col-md-4 col-lg-4">
+                <input id="inp" class="form-control col-9 " type="search" placeholder="Search" aria-label="Search">
+                <button id="butt" class="btn btn-outline-success col-2 " type="button" >Go!</button>
+        </form>
+      </nav>
+    
+    <p></p>
+    <!--<img src="http://openweathermap.org/img/w/10d.png" alt=""-->
+    <div class="container-fluid">
+        <div class="row">
+            <div id="mapid" class="col-11" ></div>
+        </div>
+    </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id = "modalContent"class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer id="footer">
+        <h4>GET IN TOUCH</h4>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="https://plus.google.com/114829169850440183349"><i class="fab fa-google-plus"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/siddharth.narayan.71"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/awesid"><i class="fab fa-github"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/awesid001/"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+    </footer>
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+
+    
+    
+</body>
+</html>

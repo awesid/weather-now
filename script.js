@@ -39,7 +39,7 @@ butt.addEventListener("click", function(event){
         request.responseType = 'json';
         //replace weather by forecast to get forecast at every 3hours
         // find id somehow for each place
-        var url = `http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=2571a8299a55cb71e3677177e917aa5d`;
+        var url = `https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=2571a8299a55cb71e3677177e917aa5d`;
         request.open("GET",url,true);
         var res= {};
         request.onreadystatechange = function(){

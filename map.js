@@ -26,7 +26,7 @@ function onMapClick(event) {
     console.log('sdfghjhredc');
     console.log(id);
     var request = new XMLHttpRequest();
-    var url = `http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=2571a8299a55cb71e3677177e917aa5d`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=2571a8299a55cb71e3677177e917aa5d`;
     request.open("GET",url,true);
     request.responseType = 'json';
     request.onreadystatechange = function(){

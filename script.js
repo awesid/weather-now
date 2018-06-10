@@ -55,16 +55,16 @@ butt.addEventListener("click", function(event){
                 modalTitle.innerHTML = str1;
                 modalContent.innerHTML = str2; 
                 $('#modal').modal('show');              
-            }else{
-                var str1 = 'OOPS';
-                var str2 = 'Data for the given city is not available in the database';
-                modalTitle.innerHTML = str1;
-                modalContent.innerHTML = str2;
-                $('#modal').modal('show'); 
             }
-
         }
         request.send(); 
+    }else{
+        var str1 = 'OOPS';
+        var str2 = 'Data for the given city is not available in the database';
+        modalTitle.innerHTML = str1;
+        modalContent.innerHTML = str2;
+        $('#modal').modal('show'); 
     }
+
     
 });
